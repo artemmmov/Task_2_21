@@ -341,6 +341,25 @@ public final class MyLinkedList<E> implements MyList<E> {
         }
     }
 
+    public void process() {
 
+        if (first != null && first.item instanceof Integer) {
+            int minIndex = 0;
+            int maxIndex = 0;
+            for (int i = 1; i < size; i++) {
+                if ((int) get(size - i) <= (int) get(minIndex)) {
+                    minIndex = size() - i;
+                }
+                if ((int) get(i) >= (int) get(maxIndex)) {
+                    maxIndex = i;
+                }
+            }
+            System.out.println("Min id:" + minIndex);
+            System.out.println("Max id:" + maxIndex);
 
+            swapNodes(minIndex, maxIndex);
+        } else {
+            System.out.println("Process cannot be executed because generic type is not equal to Integer");
+        }
+    }
 }

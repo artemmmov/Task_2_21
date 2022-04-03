@@ -23,4 +23,6 @@ public interface MyList<E> extends Iterable<E> {
     String toString();
 
     void swapNodes(int left, int right);
+
+    void process();
 }

@@ -44,21 +44,7 @@ public class Task1 extends JDialog {
         });
 
         modifyListButton.addActionListener(e -> {
-
-            int minIndex = 0;
-            int maxIndex = 0;
-            for (int i = 1; i < list.size(); i++) {
-                if (list.get(list.size() - i) <= list.get(minIndex)) {
-                    minIndex = list.size() - i;
-                }
-                if (list.get(i) >= list.get(maxIndex)) {
-                    maxIndex = i;
-                }
-            }
-            System.out.println("Min id:" + minIndex);
-            System.out.println("Max id:" + maxIndex);
-
-            list.swapNodes(minIndex, maxIndex);
+            list.process();
             modifiedListDataLabel.setText(list.toString());
         });
 
